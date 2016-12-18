@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SkullFT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <!-- Add your keywords and description here for SEO. -->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+
+    <!-- Uncomment this if you need apple touch icon. -->
+    <!--
+    <link rel="apple-touch-icon" href="touch-icon-iphone.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad-retina.png">
+    -->
+
+    <!-- Don't delete this. It's needed for development workflow. -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <script>!function(t,n){"function"==typeof define&&define.amd?define(n):"object"==typeof exports?module.exports=n():t.Walkway=n()}(this,function(){"use strict";function t(t){var n=["path","line","polyline"],e=n.reduce(function(n,e){return n+t+" "+e+", "},"");return e.slice(0,-2)}function n(t){return this instanceof n?("string"==typeof t&&(t={selector:t}),t.selector?(this.opts=t,this.selector=t.selector,this.duration=t.duration||500,this.easing=c[t.easing]||c.easeInOutCubic,this.paths=this.getPaths(),this.setInitialStyles(),void(this.id=!1)):this.error("A selector needs to be specified")):new n(t)}function e(t){t.animationStarted||(t.animationStart=Date.now(),t.animationStarted=!0);var n=t.easing((Date.now()-t.animationStart)/t.duration),e=Math.ceil(t.length*(1-n));return t.el.style.strokeDashoffset=0>e?0:Math.abs(e),n>=1?!0:!1}function i(t,n,e){this.el=t,this.length=t.getTotalLength(),this.duration=n,this.easing=e,this.animationStart=null,this.animationStarted=!1}function a(t,n,e){this.el=t,this.length=s(t),this.duration=n,this.easing=e,this.animationStart=null,this.animationStarted=!1}function r(t,n,e){this.el=t,this.length=o(t),this.duration=n,this.easing=e,this.animationStart=null,this.animationStarted=!1}function o(t){var n,e,i,a,r,o=0,s=t.points.numberOfItems;for(r=1;s>r;r++)n=t.points.getItem(r-1).x,e=t.points.getItem(r).x,i=t.points.getItem(r-1).y,a=t.points.getItem(r).y,o+=Math.sqrt(Math.pow(n-e,2)+Math.pow(i-a,2));return o}function s(t){var n=t.getAttribute("x1"),e=t.getAttribute("x2"),i=t.getAttribute("y1"),a=t.getAttribute("y2");return Math.sqrt(Math.pow(n-e,2)+Math.pow(i-a,2))}var u=0;window.requestAnimationFrame=window.requestAnimationFrame||window.mozRequestAnimationFrame||window.webkitRequestAnimationFrame||window.msRequestAnimationFrame,window.cancelAnimationFrame=window.cancelAnimationFrame||window.mozCancelAnimationFrame,window.requestAnimationFrame||(window.requestAnimationFrame=function(t){var n=(new Date).getTime(),e=Math.max(0,16-(n-u)),i=window.setTimeout(function(){t(n+e)},e);return u=n+e,i}),window.cancelAnimationFrame||(window.cancelAnimationFrame=function(t){clearTimeout(t)});var c={linear:function(t){return t},easeInQuad:function(t){return t*t},easeOutQuad:function(t){return t*(2-t)},easeInOutQuad:function(t){return.5>t?2*t*t:-1+(4-2*t)*t},easeInCubic:function(t){return t*t*t},easeOutCubic:function(t){return--t*t*t+1},easeInOutCubic:function(t){return.5>t?4*t*t*t:(t-1)*(2*t-2)*(2*t-2)+1},easeInQuart:function(t){return t*t*t*t},easeOutQuart:function(t){return 1- --t*t*t*t},easeInOutQuart:function(t){return.5>t?8*t*t*t*t:1-8*--t*t*t*t},easeInQuint:function(t){return t*t*t*t*t},easeOutQuint:function(t){return 1+--t*t*t*t*t},easeInOutQuint:function(t){return.5>t?16*t*t*t*t*t:1+16*--t*t*t*t*t}};return n.prototype.error=function(t){console.log("Walkway error: "+t)},n.prototype.getPaths=function(){var n=this,e=t(this.selector),o=document.querySelectorAll(e);return o=Array.prototype.slice.call(o),o.map(function(t){return"path"===t.tagName?new i(t,n.duration,n.easing):"line"===t.tagName?new a(t,n.duration,n.easing):"polyline"===t.tagName?new r(t,n.duration,n.easing):void 0})},n.prototype.setInitialStyles=function(){this.paths.forEach(function(t){t.el.style.strokeDasharray=t.length+" "+t.length,t.el.style.strokeDashoffset=t.length})},n.prototype.draw=function(t){var n,e=this.paths.length;if(0===e)return t&&"function"==typeof t&&t(),window.cancelAnimationFrame(this.id);for(;e--;){n=this.paths[e];var i=n.update();i&&this.paths.splice(e,1)}this.id=window.requestAnimationFrame(this.draw.bind(this,t))},i.prototype.update=function(){return e(this)},a.prototype.update=function(){return e(this)},r.prototype.update=function(){return e(this)},n});</script>
+</head>
+
+<body>
+<div class="loading-overlay">
+    <svg version="1.1" id="logo"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+     viewBox="0 0 595.3 841.9" style="enable-background:new 0 0 595.3 841.9;" xml:space="preserve">
+    <g>
+        <path d="M301.3,3.7c-0.3,0-0.7,2.2-2,5.7c-1,2.5-1.9,4.3-2.8,6c-11.6,21.5-19.3,32.8-19.3,32.8
+    c-9.9,14.4,6.6-8.4-32.2,49.8c-20.4,30.7-27.1,40.3-31.9,47.6c-41.4,63.1-53,130.7-54.7,140.7c-3.4,20.5-8.3,51.7-2.3,91.9
+    c8.4,56.6,33.2,95.8,49.4,121.3c10.8,17,22.9,32.8,39,48c20.8,19.6,49,39.8,55.5,34.2c3.7-3.3-3.9-11.6-4.8-34.4
+    c-0.5-13.7,1.7-25.7,2.8-31c1-5.3,1-3.9,6-24.2c6.3-25.8,3.8-18.2,5.2-23c2.9-10,5.4-15.3,3.2-22c-1.2-3.8-3.4-6.2-4.8-7.8
+    c-20-22.3-32.5-31.1-41.5-47.8c-2.8-5.1-4.4-9.4-6.9-16.2c-4.8-12.9-7.2-23.5-9.1-32.1c-0.4-1.6-2.5-11.3-3.9-21.9
+    c-3.6-25.3-2.8-50.1-2.1-64.6c0,0,2.8-54.9,17.9-117.9c2.9-12,6-25,11.8-41.2c3.7-10.3,8.5-22.7,8.5-22.7
+    c4.9-12.5,6.4-15.6,9.2-24.2c2.7-8.2,4.3-14.5,5.5-19c0.3-1.2,1.5-5.8,2.7-11.8c0.4-2.1,0.9-5,1.3-8.8
+    C301.5,8.2,301.8,3.7,301.3,3.7z" ></path>
+        <path d="M265.1,211.1c11.8,15,20.5,28.3,26.6,38.2c12.8,20.9,30.2,53.6,43,96.3
+        c5.5,18.3,8.4,32.7,9.3,37.7c5.4,27.6,14.4,76.8,0.7,134.3c-5.5,23-11.2,47-30.7,71c-5.9,7.3-20.6,25.1-45.3,37.7
+        c-13.2,6.7-18.2,6.3-43.3,18c-17.8,8.3-26.8,12.6-34,20c-13.9,14.3-17.7,31.5-19.2,38.7c-2.7,12.9-1.7,22.8-0.4,36.3
+        c2.3,23.2,7,28.8,7.7,47c0.5,14.2-1.8,25.6-3.7,32.7c-1.4,2.3-3.3,6-4.3,11c-1,5.1-1.6,8.1-0.3,9.7c3,3.7,15.9-1.5,46.3-16.7
+        c19.6-9.8,29.4-14.7,47.3-24.7c1.5-0.8,24.1-13,34.9-20.3c19.8-13.3,64.5-44.4,94.7-99.7c17.8-32.5,22.9-61,26.7-82.7
+        c17.3-100.1-17.5-182.5-34.3-222.7c-18.2-43.2-37.5-71.3-42.7-78.7C316.6,255.3,287,228.3,265.1,211.1z" ></path>
+    </g>
+    </svg>
+    <div class="user-name">Phodal's GitHub</div>
+</div>
+
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide slide-1">
+            <div class="item-image animated" data-ani-name="slideInLeft" data-ani-duration="1s" data-ani-delay="0s"></div>
+            <div class="item-text animated" data-ani-name="slideInRight" data-ani-duration="1s" data-ani-delay="0.3s">
+                <div class="stars">Stars</div>
+                <div id="odometer" class="odometer odometer-theme-car odometer-animating-up">
+                    9999
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide slide-2">
+            <div class="item-image animated" data-ani-name="bounceInDown" data-ani-duration="1s" data-ani-delay="0s"></div>
+            <p class="item-text animated" data-ani-name="bounceInUp" data-ani-duration="1s" data-ani-delay="0.3s">
+                <span class="projects"></span>
+            </p>
+        </div>
+        <div class="swiper-slide slide-3">
+            <div class="item-image animated" data-ani-name="lightSpeedIn" data-ani-duration="1s" data-ani-delay="0s"></div>
+            <p class="item-text animated" data-ani-name="flipInY" data-ani-duration="1s" data-ani-delay="0.3s">
+                最受欢迎的项目:(4466 stars)
+            </p>
+            <p class="item-text item-text-2 animated" data-ani-name="rotateInDownLeft" data-ani-duration="2s" data-ani-delay="1s">
+                <a href="https://github.com/phodal/growth-ebook" target="_blank">growth-ebook</a>
+            </p>
+        </div>
+        <div class="swiper-slide slide-3">
+            <div class="item-image animated" data-ani-name="slideInDown" data-ani-duration="1s" data-ani-delay="0s"></div>
+            <p class="item-text animated" data-ani-name="flipInY" data-ani-duration="1s" data-ani-delay="0.3s">
+                提交次数最多的项目:(1925）
+            </p>
+            <p class="item-text item-text-2 animated" data-ani-name="flipInY" data-ani-duration="2s" data-ani-delay="1s">
+                <a href="https://github.com/phodal/growth" target="_blank">growth</a>
+            </p>
+        </div>
+        <div class="swiper-slide slide-brand">
+            <div class="item-image animated" data-ani-name="flipInX" data-ani-duration="1s" data-ani-delay="0s">
+                <img src="images/idea.svg">
+                <img src="images/works.svg">
+                <img src="images/article.svg">
+
+                <img src="images/slogan.svg">
+            </div>
+            <p class="item-text animated" data-ani-name="flipInY" data-ani-duration="1s" data-ani-delay="0.3s">
+                最具创意的项目:
+            </p>
+            <p class="item-text item-text-2 animated" data-ani-name="flipInY" data-ani-duration="2s" data-ani-delay="1s">
+                <a href="https://github.com/phodal/brand" target="_blank">brand</a>
+            </p>
+        </div>
+        <div class="swiper-slide slide-sherlock">
+            <div class="item-image animated" data-ani-name="rollIn" data-ani-duration="1s" data-ani-delay="0s"></div>
+            <p class="item-text animated" data-ani-name="flipInY" data-ani-duration="1s" data-ani-delay="0.3s">
+                最具启发性的项目:
+            </p>
+            <p class="item-text item-text-2 animated" data-ani-name="flipInY" data-ani-duration="1.8s" data-ani-delay="1s">
+                <a href="https://github.com/phodal/sherlock" target="_blank">Sherlock</a>
+            </p>
+        </div>
+        <div class="swiper-slide slide-4">
+            <div class="item-image animated" data-ani-name="zoomIn" data-ani-duration="1.2s" data-ani-delay="0s"></div>
+            <p class="item-text animated" data-ani-name="slideInUp" data-ani-duration="1s" data-ani-delay="0.3s">
+                更多 GitHub 的故事见：<a href="https://github.com/phodal/github-roam" target="_blank">《GitHub 漫游指南》</a>
+            </p>
+        </div>
+        <div class="swiper-slide slide-5">
+            <div class="item-image animated" data-ani-name="flipInX" data-ani-duration="1.5s" data-ani-delay="0s">
+                <img src="images/qrcode.jpg" alt="">
+            </div>
+            <p class="item-text animated" data-ani-name="tada" data-ani-duration="2s" data-ani-delay="0.3s">
+                See you in next 轮子！
+            </p>
+        </div>
+    </div>
+</div>
+
+<button class="up-arrow">
+    <i class="icon-angle-double-up"></i>
+</button>
+
+<!-- Don't delete this. It's needed for development workflow. -->
+<!-- inject:js -->
+<!-- endinject -->
+
+</body>
+
+</html>
