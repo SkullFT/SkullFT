@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>iOS 企业版发布流程</title>
+  <meta name="description" content="发布内容需要三个文件">
+
+  <link rel="stylesheet" href="/css/main.css">
+
+  <link rel="canonical" href="https://fdson.com/ios-hoc-distribute.html">
+  <link rel="alternate" type="application/rss+xml" title="柯城区2018“一村万树”布局图" href="https://fdson.com/feed.xml">
+  <!--  add -->
+
+    <script type="text/javascript"
+            src="http://webapi.amap.com/maps?v=1.4.4&key=6f2ff94634344cea4a0177aaf35991e6"></script>
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">柯城区2018“一村万树”布局图</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">iOS 企业版发布流程</h1>
+    <p class="post-meta"><time datetime="2017-12-26T16:25:13+08:00" itemprop="datePublished">Dec 26, 2017</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Fu_sion</span></span></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <h2 id="section">发布内容需要三个文件</h2>
+
+<ol>
+  <li>test.plist</li>
+  <li>test.ipa</li>
+  <li>app.html</li>
+</ol>
+
+<p>将这三个文件放在根目录的 APPS 文件夹下</p>
+
+<p><em>需要注意的是 <code class="highlighter-rouge">.ipa</code> 文件名必须和 <code class="highlighter-rouge">.plist</code> 文件名一致,</em>
+<em><code class="highlighter-rouge">bundle-identifier</code> 必须和打包的包名内一致</em></p>
+
+<p>test.plist</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="cp">&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;</span>
+<span class="nt">&lt;plist</span> <span class="na">version=</span><span class="s">"1.0"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;dict&gt;</span>
+	<span class="nt">&lt;key&gt;</span>items<span class="nt">&lt;/key&gt;</span>
+	<span class="nt">&lt;array&gt;</span>
+		<span class="nt">&lt;dict&gt;</span>
+			<span class="nt">&lt;key&gt;</span>assets<span class="nt">&lt;/key&gt;</span>
+			<span class="nt">&lt;array&gt;</span>
+				<span class="nt">&lt;dict&gt;</span>
+					<span class="nt">&lt;key&gt;</span>kind<span class="nt">&lt;/key&gt;</span>
+					<span class="nt">&lt;string&gt;</span>software-package<span class="nt">&lt;/string&gt;</span>
+					<span class="nt">&lt;key&gt;</span>url<span class="nt">&lt;/key&gt;</span>
+					<span class="nt">&lt;string&gt;</span>https:/www.fdson.com/apps/xxx.ipa<span class="nt">&lt;/string&gt;</span>
+				<span class="nt">&lt;/dict&gt;</span>
+				<span class="nt">&lt;dict&gt;</span>
+					<span class="nt">&lt;key&gt;</span>kind<span class="nt">&lt;/key&gt;</span>
+					<span class="nt">&lt;string&gt;</span>full-size-image<span class="nt">&lt;/string&gt;</span>
+					<span class="nt">&lt;key&gt;</span>needs-shine<span class="nt">&lt;/key&gt;</span>
+					<span class="nt">&lt;false/&gt;</span>
+					<span class="nt">&lt;key&gt;</span>url<span class="nt">&lt;/key&gt;</span>
+					<span class="nt">&lt;string&gt;</span>vhttps://www.fdson.com/apps/image.512x512.png<span class="nt">&lt;/string&gt;</span>
+				<span class="nt">&lt;/dict&gt;</span>
+				<span class="nt">&lt;dict&gt;</span>
+					<span class="nt">&lt;key&gt;</span>kind<span class="nt">&lt;/key&gt;</span>
+					<span class="nt">&lt;string&gt;</span>display-image<span class="nt">&lt;/string&gt;</span>
+					<span class="nt">&lt;key&gt;</span>needs-shine<span class="nt">&lt;/key&gt;</span>
+					<span class="nt">&lt;false/&gt;</span>
+					<span class="nt">&lt;key&gt;</span>url<span class="nt">&lt;/key&gt;</span>
+					<span class="nt">&lt;string&gt;</span>https://www.fdson.com/apps/image.57x57.png<span class="nt">&lt;/string&gt;</span>
+				<span class="nt">&lt;/dict&gt;</span>
+			<span class="nt">&lt;/array&gt;</span>
+			<span class="nt">&lt;key&gt;</span>metadata<span class="nt">&lt;/key&gt;</span>
+			<span class="nt">&lt;dict&gt;</span>
+				<span class="nt">&lt;key&gt;</span>bundle-identifier<span class="nt">&lt;/key&gt;</span>
+				<span class="nt">&lt;string&gt;</span>com.fdson.test<span class="nt">&lt;/string&gt;</span> /
+				<span class="nt">&lt;key&gt;</span>bundle-version<span class="nt">&lt;/key&gt;</span>
+				<span class="nt">&lt;string&gt;</span>1.40<span class="nt">&lt;/string&gt;</span>
+				<span class="nt">&lt;key&gt;</span>kind<span class="nt">&lt;/key&gt;</span>
+				<span class="nt">&lt;string&gt;</span>software<span class="nt">&lt;/string&gt;</span>
+				<span class="nt">&lt;key&gt;</span>subtitle<span class="nt">&lt;/key&gt;</span>
+				<span class="nt">&lt;string&gt;</span>副标题（非必填）<span class="nt">&lt;/string&gt;</span>
+				<span class="nt">&lt;key&gt;</span>title<span class="nt">&lt;/key&gt;</span>
+				<span class="nt">&lt;string&gt;</span>巨化云办公<span class="nt">&lt;/string&gt;</span>
+			<span class="nt">&lt;/dict&gt;</span>
+		<span class="nt">&lt;/dict&gt;</span>
+	<span class="nt">&lt;/array&gt;</span>
+<span class="nt">&lt;/dict&gt;</span>
+<span class="nt">&lt;/plist&gt;</span>
+
+</code></pre>
+</div>
+
+<p>app.html
+<em>这里的 plist文件 必须放置在 https 的地址下</em></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+	<span class="nt">&lt;title&gt;</span>install App<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+	<span class="nt">&lt;h2&gt;&lt;center&gt;&lt;a</span> <span class="na">href=</span><span class="s">"itms-services://?action=download-manifest&amp;url=https://www.fdson.com/apps/test.plist"</span> <span class="na">id=</span><span class="s">"text"</span><span class="nt">&gt;</span>install fdson App<span class="nt">&lt;/a&gt;</span> <span class="nt">&lt;/center&gt;&lt;/h2&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
+</div>
+
+<p>这样访问以下地址就可以下载企业版本的 APP 了，需要在设置 -&gt; 通用 -&gt; 证书 -信任此证书</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>https://fdson.com/apps/test.html
+</code></pre>
+</div>
+
+<!---->
+
+<ul>
+  <li>生成文件</li>
+</ul>
+
+<p><img src="https://raw.githubusercontent.com/SionFu/SionFu.github.io/master/_site/images/archive.png" alt="archive" /></p>
+
+<ul>
+  <li>导出文件</li>
+</ul>
+
+<p><img src="https://raw.githubusercontent.com/SionFu/SionFu.github.io/master/_site/images/iosHoc.png" alt="iosHoc" /></p>
+
+
+  </div>
+
+</article>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+
+
+</footer>
+
+
+  </body>
+
+</html>

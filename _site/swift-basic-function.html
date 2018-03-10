@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Swift 基本函数</title>
+  <meta name="description" content="定义一个函数">
+
+  <link rel="stylesheet" href="/css/main.css">
+
+  <link rel="canonical" href="https://fdson.com/swift-basic-function.html">
+  <link rel="alternate" type="application/rss+xml" title="柯城区2018“一村万树”布局图" href="https://fdson.com/feed.xml">
+  <!--  add -->
+
+    <script type="text/javascript"
+            src="http://webapi.amap.com/maps?v=1.4.4&key=6f2ff94634344cea4a0177aaf35991e6"></script>
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">柯城区2018“一村万树”布局图</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Swift 基本函数</h1>
+    <p class="post-meta"><time datetime="2016-06-01T08:18:29+08:00" itemprop="datePublished">Jun 1, 2016</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Fu_sion</span></span></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <h2 id="section">定义一个函数</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="o">/**</span><span class="kd">func</span> <span class="nf">函数名</span><span class="p">(</span><span class="nv">参数名</span> <span class="p">:</span> <span class="n">参数类型</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">返回类型</span>  <span class="p">{</span>
+<span class="n">函数部分</span>
+<span class="p">}</span> <span class="o">*/</span>
+
+<span class="kd">func</span> <span class="nf">sayHello</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"hello"</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="nf">sayHello</span><span class="p">()</span>
+<span class="c1">//没有返回值 可以省略返回类型</span>
+<span class="kd">func</span> <span class="nf">sayHello2</span><span class="p">(){</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"Hello2"</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="nf">sayHello2</span><span class="p">()</span>
+
+<span class="c1">//带参数 带返回值</span>
+<span class="kd">func</span> <span class="nf">sayHello3</span><span class="p">(</span><span class="nv">personName</span> <span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">msg</span> <span class="o">=</span> <span class="s">"Hello"</span> <span class="o">+</span> <span class="n">personName</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">msg</span>
+<span class="p">}</span>
+
+<span class="nf">sayHello3</span><span class="p">(</span><span class="s">" me"</span><span class="p">)</span>
+
+<span class="c1">//设计一个函数 有参数 没有返回值</span>
+<span class="c1">//把一个人的名字 和 年龄传入 然后在这个函数的内容打印传入的信息</span>
+
+<span class="kd">func</span> <span class="nf">printInfo</span> <span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">age</span> <span class="p">:</span> <span class="kt">Int</span><span class="p">)</span><span class="o">-&gt;</span><span class="p">(</span><span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="nf">print</span><span class="p">(</span><span class="s">"Hello: </span><span class="se">\(</span><span class="n">name</span><span class="se">)</span><span class="s">今年</span><span class="se">\(</span><span class="n">age</span><span class="se">)</span><span class="s"> 岁"</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nf">printInfo</span><span class="p">(</span><span class="s">"Fu_sion"</span><span class="p">,</span> <span class="nv">age</span><span class="p">:</span> <span class="mi">13</span><span class="p">)</span>
+
+<span class="k">let</span> <span class="nv">msgStr</span> <span class="o">=</span> <span class="s">"我我我爱爱爱你, 我想你, 我喜欢你, 我恨你, 我想回家"</span>
+
+<span class="kd">func</span> <span class="nf">getNum</span> <span class="p">(</span><span class="nv">msgStr</span> <span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="nv">me</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">you</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">other</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">m</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">o</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="k">for</span> <span class="n">ch</span> <span class="k">in</span> <span class="n">msgStr</span><span class="o">.</span><span class="n">characters</span> <span class="p">{</span>
+        <span class="k">switch</span> <span class="n">ch</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="s">"我"</span><span class="p">:</span>
+        <span class="n">m</span><span class="o">++</span>
+        <span class="k">case</span> <span class="s">"你"</span><span class="p">:</span>
+        <span class="n">y</span><span class="o">++</span>
+        <span class="k">default</span><span class="p">:</span>
+        <span class="n">o</span><span class="o">++</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="nf">return</span> <span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">o</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">let</span> <span class="nv">result</span> <span class="o">=</span> <span class="nf">getNum</span><span class="p">(</span><span class="n">msgStr</span><span class="p">)</span>
+<span class="n">result</span><span class="o">.</span><span class="mi">0</span>
+<span class="n">result</span><span class="o">.</span><span class="mi">1</span>
+<span class="n">result</span><span class="o">.</span><span class="mi">2</span>
+
+</code></pre>
+</div>
+
+<ul>
+  <li>函数参数</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">//函数的参数</span>
+<span class="kd">func</span> <span class="nf">fa</span><span class="p">(</span><span class="nv">localeName</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span> <span class="p">{</span>
+    <span class="c1">//localeName 是参数名</span>
+    <span class="c1">//并且是内部名 就只是能在函数内部使用</span>
+    <span class="c1">//默认函数的第一个参数 只是内部名</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">localeName</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="nf">fa</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="c1">//可以给函数的参数 起外部名 </span>
+<span class="kd">func</span> <span class="nf">fa</span><span class="p">(</span><span class="n">externName</span> <span class="nv">localeName</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">localeName</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">//externalName 外部名只能在函数外部使用</span>
+<span class="nf">fa</span><span class="p">(</span><span class="nv">externName</span><span class="p">:</span> <span class="mi">1000</span><span class="p">)</span>
+
+<span class="c1">//显示一个人的信息</span>
+<span class="kd">func</span> <span class="nf">show</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">age</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">name</span><span class="se">)\(</span><span class="n">age</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">//从第二个参数开始既是内部名 又是外部名</span>
+<span class="nf">show</span><span class="p">(</span><span class="s">"fusion"</span><span class="p">,</span> <span class="nv">age</span><span class="p">:</span> <span class="mi">132</span><span class="p">)</span>
+
+<span class="c1">//如果不希望使用外部名 默认额外部名 可以自己写外部名</span>
+<span class="kd">func</span> <span class="nf">pointWthX</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span><span class="n">andY</span> <span class="nv">y</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">x</span><span class="se">)\(</span><span class="n">y</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nf">pointWthX</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nv">andY</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1">//用C语言的方法 _ 去掉外部名</span>
+<span class="kd">func</span> <span class="nf">pointWithY</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">y</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">x</span><span class="se">)\(</span><span class="n">y</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="nf">pointWithY</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c1">//所有外部名 都自己来</span>
+<span class="kd">func</span> <span class="nf">pointWithXX</span><span class="p">(</span><span class="n">x</span> <span class="nv">x</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">andY</span> <span class="nv">y</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">x</span><span class="se">)\(</span><span class="n">y</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nf">pointWithXX</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span> <span class="nv">andY</span><span class="p">:</span> <span class="mi">9</span><span class="p">)</span>
+
+</code></pre>
+</div>
+
+<ul>
+  <li>函数的重载</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+<span class="o">/**</span>
+    <span class="nf">函数重载</span><span class="p">(</span><span class="n">方法重载</span><span class="p">)</span>
+    <span class="n">两个或者以上的方法</span> <span class="n">方法名相同</span> <span class="n">参数列表不一样都可以形成重载关系</span>
+    <span class="nv">参数列表不同</span><span class="p">:</span> <span class="n">参数的个数不同</span>
+                <span class="n">参数的类型不同</span>
+                <span class="n">参数的顺序不同</span>
+                <span class="n">swift</span> <span class="n">中的外部名不同</span>
+<span class="o">*/</span>
+<span class="kd">func</span> <span class="nf">add</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span><span class="kt">Int</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"add(x: Int, y:Int) -&gt;Int"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">add</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="kt">Double</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span> <span class="o">-&gt;</span><span class="kt">Double</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">add</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span> <span class="o">-&gt;</span><span class="kt">Double</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kt">Double</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">y</span>
+<span class="p">}</span>
+<span class="c1">//根据参数的传入情况 自动匹配相应的函数</span>
+<span class="nf">add</span><span class="p">(</span><span class="mi">99</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">99</span><span class="p">)</span>
+<span class="nf">add</span><span class="p">(</span><span class="mf">99.0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mf">98.0</span><span class="p">)</span>
+<span class="nf">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">)</span>
+
+</code></pre>
+</div>
+
+<ul>
+  <li>函数的默认值和边长参数</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="o">/**</span>
+    <span class="n">一个函数的参数</span> <span class="n">可以设定默认值</span> 
+    <span class="n">如果这个参数不穿入值</span> <span class="n">则使用默认值</span> 
+    <span class="n">如果传入值</span> <span class="n">则会自动替代掉这个值</span>
+<span class="o">*/</span>
+<span class="kd">func</span> <span class="nf">printArray</span><span class="p">(</span><span class="nv">array</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">],</span> <span class="nv">apli</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">","</span><span class="p">,</span> <span class="nv">flag</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">flag</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"["</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="k">var</span> <span class="nv">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">array</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="se">)</span><span class="s"> </span><span class="se">\(</span><span class="n">apli</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="n">array</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">flag</span><span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"]"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">var</span> <span class="nv">array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="nf">printArray</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="nv">apli</span><span class="p">:</span> <span class="s">","</span><span class="p">,</span> <span class="nv">flag</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+<span class="nf">printArray</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
+<span class="nf">printArray</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="nv">apli</span><span class="p">:</span> <span class="s">"243"</span><span class="p">)</span>
+
+<span class="c1">//可变长参数</span>
+<span class="kd">func</span> <span class="nf">getAvg</span><span class="p">(</span><span class="nv">numbers</span><span class="p">:</span> <span class="kt">Double</span><span class="o">...</span><span class="p">)</span> <span class="o">-&gt;</span><span class="kt">Double</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">total</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="k">for</span> <span class="n">num</span> <span class="k">in</span> <span class="n">numbers</span> <span class="p">{</span>
+        <span class="n">total</span> <span class="o">+=</span> <span class="n">num</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">total</span> <span class="o">/</span> <span class="kt">Double</span><span class="p">(</span> <span class="n">numbers</span><span class="o">.</span><span class="n">count</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">//可以传入n个值</span>
+<span class="nf">getAvg</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+
+</code></pre>
+</div>
+
+<ul>
+  <li>函数的类型</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">//函数类型</span>
+<span class="c1">//() -&gt; void</span>
+<span class="c1">//函数类型 也可以写成 () -&gt; ()</span>
+<span class="kd">func</span> <span class="nf">sayHello</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">//写出下面函数的类型</span>
+<span class="c1">//函数类型 (Int, Int) -&gt; Int</span>
+<span class="kd">func</span> <span class="nf">addTwoInts</span><span class="p">(</span><span class="nv">x</span> <span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<span class="p">}</span>
+<span class="c1">//(Int, Int) -&gt;Int</span>
+<span class="kd">func</span> <span class="nf">subTwoInt</span> <span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span><span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span>
+<span class="p">}</span>
+
+<span class="c1">//定义一个变量 用来保存</span>
+<span class="k">var</span> <span class="nv">function</span> <span class="o">=</span> <span class="n">addTwoInts</span>
+<span class="c1">//使用function调用函数</span>
+<span class="nf">function</span><span class="p">(</span><span class="mi">100</span> <span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">200</span><span class="p">)</span>
+<span class="c1">//标注函数不需要外部名</span>
+<span class="k">var</span> <span class="nv">function2</span> <span class="p">:</span> <span class="p">(</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span><span class="kt">Int</span> <span class="o">=</span> <span class="n">addTwoInts</span>
+<span class="nf">function2</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="n">function2</span> <span class="o">=</span> <span class="n">subTwoInt</span>
+<span class="nf">function2</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="kd">func</span> <span class="nf">sayHello2</span><span class="p">(){</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"hello2"</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">//函数类型标注的几种方式</span>
+<span class="k">var</span> <span class="nv">fun1</span> <span class="p">:</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="p">()</span> <span class="o">=</span> <span class="n">sayHello2</span>
+<span class="k">var</span> <span class="nv">fun2</span> <span class="p">:</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span> <span class="o">=</span> <span class="n">sayHello2</span>
+<span class="k">var</span> <span class="nv">fun3</span> <span class="p">:</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">Void</span><span class="p">)</span> <span class="o">=</span> <span class="n">sayHello2</span>
+<span class="k">var</span> <span class="nv">fun4</span> <span class="p">:</span> <span class="p">(</span><span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">Void</span><span class="p">)</span> <span class="o">=</span> <span class="n">sayHello2</span>
+<span class="k">var</span> <span class="nv">fun5</span> <span class="p">:</span> <span class="kt">Void</span> <span class="o">-&gt;</span> <span class="kt">Void</span> <span class="o">=</span> <span class="n">sayHello2</span>
+<span class="k">var</span> <span class="nv">fun6</span> <span class="p">:</span> <span class="p">(</span><span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span> <span class="o">=</span> <span class="n">sayHello2</span>
+
+<span class="k">var</span> <span class="nv">a</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="k">var</span> <span class="nv">b</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="c1">//函数类型的参数</span>
+
+<span class="kd">func</span> <span class="nf">getResult</span><span class="p">(</span><span class="nv">fun</span> <span class="p">:</span> <span class="p">(</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span><span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">result</span> <span class="o">=</span> <span class="nf">fun</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+<span class="p">}</span>
+
+
+<span class="nf">getResult</span><span class="p">(</span><span class="n">addTwoInts</span><span class="p">)</span>				<span class="c1">//300</span>
+<span class="nf">getResult</span><span class="p">(</span><span class="n">subTwoInt</span><span class="p">)</span>					<span class="c1">//100</span>
+
+<span class="c1">//函数类型的返回值</span>
+<span class="kd">func</span> <span class="nf">test</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span><span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">addTwoInts</span>
+<span class="p">}</span>
+
+<span class="nf">test</span><span class="p">()</span>
+
+
+<span class="nf">test</span><span class="p">()(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>						<span class="c1">//200</span>
+
+<span class="kd">func</span> <span class="nf">test1</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span><span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">subTwoInt</span>
+<span class="p">}</span>
+
+<span class="nf">test1</span><span class="p">()(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>							<span class="c1">//1</span>
+</code></pre>
+</div>
+
+
+  </div>
+
+</article>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+
+
+</footer>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Swift 基本数据类型</title>
+  <meta name="description" content="基本类型Swift 是强类型语言">
+
+  <link rel="stylesheet" href="/css/main.css">
+
+  <link rel="canonical" href="https://fdson.com/swift-basic.html">
+  <link rel="alternate" type="application/rss+xml" title="柯城区2018“一村万树”布局图" href="https://fdson.com/feed.xml">
+  <!--  add -->
+
+    <script type="text/javascript"
+            src="http://webapi.amap.com/maps?v=1.4.4&key=6f2ff94634344cea4a0177aaf35991e6"></script>
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">柯城区2018“一村万树”布局图</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Swift 基本数据类型</h1>
+    <p class="post-meta"><time datetime="2016-05-22T20:26:29+08:00" itemprop="datePublished">May 22, 2016</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Fu_sion</span></span></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <h2 id="section">基本类型</h2>
+<p>Swift 是强类型语言</p>
+
+<ul>
+  <li>var 声明变量</li>
+  <li>let 声明常量</li>
+  <li>定义常量 和 变量</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">var</span> <span class="nv">str</span> <span class="o">=</span> <span class="s">"HelloWord"</span>
+<span class="k">let</span> <span class="nv">str</span> <span class="o">=</span> <span class="s">"HelloWord"</span>
+</code></pre>
+</div>
+<ul>
+  <li>类型标注</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">var</span> <span class="nv">str</span> <span class="p">:</span> <span class="kt">String</span> <span class="c1">//声明变量 str 为 String 类型 只能赋值字符串</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>强类型转换</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">var</span> <span class="nv">int</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+<span class="k">var</span> <span class="nv">double</span> <span class="o">=</span> <span class="mf">3.14</span>
+<span class="c1">//int = double //不支持隐式类型转换</span>
+<span class="n">int</span> <span class="o">=</span> <span class="kt">Int</span><span class="p">(</span><span class="n">double</span><span class="p">)</span>
+</code></pre>
+</div>
+<ul>
+  <li>字符串的拼接</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">var</span> <span class="nv">label</span> <span class="o">=</span> <span class="s">"This is"</span>
+<span class="k">var</span> <span class="nv">label1</span> <span class="o">=</span> <span class="s">"Label"</span>
+<span class="k">var</span> <span class="nv">test</span> <span class="o">=</span> <span class="n">label</span> <span class="o">+</span> <span class="n">label1</span>
+<span class="k">var</span> <span class="nv">with</span> <span class="o">=</span> <span class="mi">60</span> 
+<span class="c1">//int 类型和字符串拼接</span>
+<span class="k">var</span> <span class="nv">test1</span> <span class="o">=</span> <span class="n">test</span> <span class="o">+</span> <span class="s">"的宽度为:"</span> <span class="o">+</span><span class="kt">String</span><span class="p">(</span><span class="n">with</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>
+    <p>Swift 中的类型</p>
+  </li>
+  <li>
+    <p>整型</p>
+  </li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">var</span> <span class="nv">i</span> <span class="p">:</span> <span class="kt">Int</span> 
+<span class="kd">var</span><span class="o">.</span><span class="n">max</span>
+<span class="kd">var</span><span class="o">.</span><span class="n">min</span>
+<span class="c1">//Int 默认为 Int64</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>浮点</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">var</span> <span class="nv">f1</span> <span class="p">:</span> <span class="kt">Float</span>
+<span class="k">var</span> <span class="nv">f2</span> <span class="p">:</span> <span class="kt">Float80</span>
+<span class="k">var</span> <span class="nv">f3</span> <span class="p">:</span> <span class="n">float64</span>
+<span class="c1">// Double 是 Float64 的	别名,在 Swift 中没有 Dubele</span>
+
+</code></pre>
+</div>
+
+<ul>
+  <li>布尔</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">var</span> <span class="nv">isBool</span> <span class="p">:</span><span class="kt">Bool</span>
+<span class="c1">//布尔值不能用1 0 来赋值</span>
+<span class="n">isBool</span> <span class="o">=</span> <span class="n">ture</span>
+<span class="n">isBool</span> <span class="o">=</span> <span class="kc">false</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>计算一个类型的大小</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nf">sizeof</span><span class="p">(</span><span class="kt">Int</span><span class="p">)</span> 	<span class="c1">//8byte</span>
+<span class="nf">sizeof</span><span class="p">(</span><span class="kt">Float</span><span class="p">)</span>	<span class="c1">//4byte</span>
+<span class="nf">sizeof</span><span class="p">(</span><span class="kt">Int8</span><span class="p">)</span>	<span class="c1">//1byte</span>
+
+</code></pre>
+</div>
+
+<ul>
+  <li>字符串和字符</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">var</span> <span class="nv">str</span><span class="p">:</span><span class="kt">String</span> <span class="c1">//字符串直接标注,未使用时不能判断是否为空</span>
+<span class="c1">//给字符串赋空值的几种方法</span>
+<span class="k">var</span> <span class="nv">str1</span> <span class="o">=</span> <span class="s">""</span>
+<span class="k">var</span> <span class="nv">str</span> <span class="o">=</span> <span class="kt">String</span><span class="p">()</span>
+<span class="c1">//判断字符按串是否为空</span>
+<span class="k">if</span> <span class="n">str</span><span class="o">.</span><span class="n">isEmpty</span> <span class="p">{</span>
+	<span class="nf">print</span><span class="p">(</span><span class="s">"strIsEmpty"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>变量字符串在 swift 中不是用指针来引用的</li>
+  <li>在 swift 中可以用 OC 的 语法</li>
+  <li>变量字符串的拼接</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">var</span> <span class="nv">i1</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">var</span> <span class="nv">i2</span> <span class="o">=</span> <span class="n">i1</span>
+<span class="n">i1</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">q2</span><span class="p">)</span> <span class="c1">//20</span>
+<span class="c1">//引用类型 引用 OC 类型</span>
+<span class="k">var</span> <span class="nv">str_ns</span> <span class="p">:</span> <span class="kt">NSMutableString</span> <span class="o">=</span> <span class="s">"Hello World"</span>
+<span class="k">var</span> <span class="nv">str2_ns</span> <span class="o">=</span> <span class="n">str_ns</span>  <span class="c1">//引用类型 起了一个别名</span>
+<span class="n">str_ns</span> <span class="o">.</span><span class="nf">appendString</span><span class="p">(</span><span class="s">"String"</span><span class="p">)</span><span class="c1">//"Hello WorldString"</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">str2_ns</span><span class="p">)</span>		           	<span class="c1">//"Hello WorldString"</span>
+<span class="k">let</span> <span class="nv">constrString</span> <span class="o">=</span> <span class="s">"常量"</span>
+<span class="k">var</span> <span class="nv">variable</span> <span class="o">=</span> <span class="s">"变量"</span>
+<span class="n">variable</span> <span class="o">+=</span> <span class="n">constrString</span> <span class="c1">//变量常量</span>
+
+</code></pre>
+</div>
+
+<ul>
+  <li>Swift 中的编码字符为 UNICODE 支持所有字符,包括表情符号</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">var</span> <span class="nv">表情符号</span> <span class="o">=</span> <span class="s">"🍨😱💃🏻"</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>通过字符串数组创建字符串</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">var</span> <span class="nv">catCharacter</span> <span class="p">:</span> <span class="p">[</span><span class="kt">Character</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">"C"</span><span class="p">,</span> <span class="s">"c"</span> <span class="p">,</span> <span class="s">"t"</span> <span class="p">,</span><span class="s">"!"</span><span class="p">]</span>
+<span class="k">var</span> <span class="nv">catString</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="n">catCharacter</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>字符串中的转译字符</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> <span class="k">let</span> <span class="nv">myStr</span> <span class="o">=</span> <span class="s">"</span><span class="se">\"</span><span class="s">想象力比知识更重要</span><span class="se">\"</span><span class="s"> </span><span class="se">\n</span><span class="s"> --爱因斯坦"</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>字符串的格式化拼接</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">var</span> <span class="nv">hour</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="k">var</span> <span class="nv">min</span> <span class="o">=</span> <span class="mi">11</span>
+<span class="k">var</span> <span class="nv">secand</span> <span class="o">=</span> <span class="mi">22</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">hour</span><span class="se">)</span><span class="s">小时</span><span class="se">\(</span><span class="n">min</span><span class="se">)</span><span class="s"> 分钟</span><span class="se">\(</span><span class="n">secand</span><span class="se">)</span><span class="s"> 秒"</span><span class="p">)</span>  <span class="c1">//"2小时11 分钟22 秒\n"</span>
+<span class="k">var</span> <span class="nv">timeStr</span> <span class="o">=</span> <span class="s">"</span><span class="se">\(</span><span class="n">hour</span><span class="se">)</span><span class="s">:</span><span class="se">\(</span><span class="n">min</span><span class="se">)</span><span class="s">:</span><span class="se">\(</span><span class="n">secand</span><span class="se">)</span><span class="s">"</span>      <span class="c1">//"2:11:22"</span>
+<span class="n">timeStr</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="nv">format</span><span class="p">:</span> <span class="s">"%02d:%02d:%02d"</span><span class="p">,</span> <span class="n">hour</span><span class="p">,</span><span class="n">min</span><span class="p">,</span><span class="n">secand</span><span class="p">)</span> <span class="c1">//"02:11:22"</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>值类型 引用类型</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">//[结构体] 都是值类型  [类 类型] 都是引用类型</span>
+<span class="k">var</span> <span class="nv">str1</span> <span class="o">=</span> <span class="s">"Hello"</span>
+<span class="k">var</span> <span class="nv">str2</span> <span class="o">=</span> <span class="s">"World"</span>
+<span class="n">str1</span> <span class="o">+=</span> <span class="n">str2</span>							<span class="c1">//"HelloWorld"</span>
+<span class="n">str1</span>									<span class="c1">//"HelloWorld"</span>
+<span class="n">str2</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">unsafeAddressOf</span><span class="p">(</span><span class="n">str1</span><span class="p">))</span>			<span class="c1">//0x00007fa870c1c5b0</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">unsafeAddressOf</span><span class="p">(</span><span class="n">str2</span><span class="p">))</span>			<span class="c1">//0x00007fa870d10310</span>
+
+<span class="c1">//引用类型</span>
+<span class="k">var</span> <span class="nv">refStr3</span> <span class="p">:</span> <span class="kt">NSMutableString</span> <span class="o">=</span> <span class="s">"hello"</span>
+<span class="k">var</span> <span class="nv">refStr4</span> <span class="o">=</span> <span class="n">refStr3</span>
+<span class="n">refStr3</span>
+<span class="n">refStr4</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">unsafeAddressOf</span><span class="p">(</span><span class="n">refStr3</span><span class="p">))</span>		<span class="c1">//0x00007fa870f1f600</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">unsafeAddressOf</span><span class="p">(</span><span class="n">refStr4</span><span class="p">))</span>		<span class="c1">//0x00007fa870f1f600</span>
+
+<span class="c1">//引用类型</span>
+<span class="k">var</span> <span class="nv">myStr1</span> <span class="p">:</span> <span class="kt">NSString</span> <span class="o">=</span> <span class="s">"Hello"</span>
+<span class="k">var</span> <span class="nv">myStr2</span> <span class="o">=</span> <span class="n">myStr1</span><span class="p">;</span>
+<span class="n">myStr2</span> <span class="o">=</span> <span class="s">"world"</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">unsafeAddressOf</span><span class="p">(</span><span class="n">myStr1</span><span class="p">))</span>		<span class="c1">//0x00007fa870c1c910</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">unsafeAddressOf</span><span class="p">(</span><span class="n">myStr2</span><span class="p">))</span>		<span class="c1">//0x00007fa870c19390</span>
+
+<span class="c1">//改变指针指向</span>
+<span class="n">myStr1</span> <span class="o">=</span> <span class="s">"Hello"</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">unsafeAddressOf</span><span class="p">(</span><span class="n">myStr1</span><span class="p">))</span>		<span class="c1">//0x00007fa870c13c60</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>运算符</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">var</span> <span class="nv">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">e</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="nv">g</span> <span class="p">:</span><span class="kt">Int</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="c1">//swif 中的运算符 本质上就是一个函数</span>
+<span class="c1">//赋值运算符函数返回的值是Void</span>
+<span class="c1">//a =  b = c = d = 10</span>
+
+<span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
+<span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+<span class="c1">//除法取整依旧存在</span>
+<span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+<span class="mi">7</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="mi">7</span> <span class="o">/</span> <span class="mf">3.0</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="c1">//变量值 和表达式 表达式值</span>
+<span class="k">var</span> <span class="nv">x</span> <span class="o">=</span> <span class="n">a</span><span class="o">++</span> <span class="o">+</span> <span class="o">++</span><span class="n">a</span> <span class="o">+</span> <span class="o">++</span><span class="n">a</span> <span class="o">+</span> <span class="n">a</span><span class="o">++</span>	<span class="c1">//48</span>
+<span class="k">var</span> <span class="nv">y</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">+</span> <span class="mi">12</span> <span class="o">+</span> <span class="mi">13</span> <span class="o">+</span> <span class="mi">13</span>			<span class="c1">//48</span>
+<span class="n">a</span>									<span class="c1">//14</span>
+<span class="c1">//三目运算符号</span>
+<span class="n">a</span> <span class="o">==</span> <span class="n">b</span> <span class="p">?</span> <span class="nv">a</span><span class="p">:</span><span class="n">b</span>
+<span class="c1">//只有可选类型 可以赋值为nil</span>
+<span class="c1">//可选类型的意思就是指可以是nil</span>
+<span class="c1">//可选类型 会自动赋值为nil</span>
+<span class="k">var</span> <span class="nv">z</span> <span class="p">:</span> <span class="kt">Int</span><span class="p">?</span>							<span class="c1">//nil</span>
+<span class="n">z</span> <span class="o">=</span> <span class="kc">nil</span>								<span class="c1">//nil</span>
+<span class="n">z</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="c1">//?? 运算符是三目的简写</span>
+<span class="k">var</span> <span class="nv">r</span> <span class="o">=</span> <span class="n">z</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">?</span><span class="nv">z</span> <span class="p">:</span><span class="mi">0</span>
+<span class="c1">//?? 空合运算符 z不是空就用z 否则就是0</span>
+<span class="k">var</span> <span class="nv">r2</span> <span class="o">=</span> <span class="n">z</span> <span class="p">??</span> <span class="mi">0</span>
+
+<span class="k">var</span> <span class="nv">r3</span> <span class="o">=</span> <span class="n">z</span> <span class="p">??</span> <span class="mi">0</span>
+
+
+<span class="c1">//区间 运算符</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">9</span>
+
+<span class="c1">//这个区间</span>
+<span class="n">a</span><span class="o">...</span><span class="n">b</span>         				  <span class="c1">//5..&lt;10</span>
+
+<span class="c1">//半闭半开区间</span>
+<span class="n">a</span> <span class="o">..&lt;</span> <span class="n">b</span>		 				<span class="c1">//4..&lt;9</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>if 语句
+    <ol>
+      <li>if 后面的圆括号可以省略</li>
+      <li>无论有多少条语句 大括号不能省略</li>
+      <li>只能使用布尔型的值作为判断条件 非零即真不再成里</li>
+    </ol>
+  </li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">var</span> <span class="nv">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">var</span> <span class="nv">y</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span> <span class="p">{</span>
+    <span class="n">x</span>
+<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+    <span class="n">y</span>									<span class="c1">//20</span>
+<span class="p">}</span>
+
+<span class="k">var</span> <span class="nv">score</span> <span class="o">=</span> <span class="mi">85</span>
+<span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"A"</span><span class="p">)</span>
+<span class="p">}</span><span class="k">else</span> <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">80</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"B"</span><span class="p">)</span>   						<span class="c1">//"B\n"</span>
+<span class="p">}</span><span class="k">else</span> <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">60</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"C"</span><span class="p">)</span>
+<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"D"</span><span class="p">)</span>
+<span class="p">}</span>
+
+</code></pre>
+</div>
+
+<ul>
+  <li>if 语句</li>
+</ul>
+
+<pre><code class="language-Switch">/**
+1. 完备性的问题 需要匹配所有的可能 一般会带default
+2. 只要有default就必需出现在最后
+3. 没有隐式贯穿 就是不用在后面加 break 也不会向下一个分支执行 如果下一个分支可以执行则使用fallthrough
+4. 在switch 中case 块中出现了变量 不需要加大括号
+*/
+var x = 2
+switch x{
+case 0:
+    print("0")
+case 1:
+    print("1")
+case 2:
+    print("2")					//"2\n"
+    fallthrough
+case 3:
+    print("3")					//"3\n"
+default:
+    print("nono")
+    
+}
+</code></pre>
+
+<ul>
+  <li>for 循环</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// 一行中出现多行语句 需要使用分号</span>
+<span class="k">var</span> <span class="nv">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">var</span> <span class="nv">y</span> <span class="o">=</span> <span class="mi">10</span> <span class="p">;</span> <span class="k">var</span> <span class="nv">z</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="c1">//使用for循环 把一个变量从1循环到9 </span>
+
+<span class="k">for</span> <span class="k">var</span> <span class="nv">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="p">;</span> <span class="n">i</span><span class="o">++</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+<ul>
+  <li>while 循环</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">var</span> <span class="nv">i</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">{</span>
+    <span class="n">i</span><span class="o">++</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">// do while</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">repeat</span> <span class="p">{</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="n">i</span><span class="o">++</span>
+<span class="p">}</span> <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">6</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>双重循环 退出 <code class="highlighter-rouge">break</code>后面可以跟标签</li>
+  <li>小练习 写一个循环 计算里面除了元音的字符</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">let</span> <span class="nv">message</span> <span class="o">=</span> <span class="s">"a place where people can play"</span>
+<span class="c1">//写一个程序 统计了 除了 a e i o u 之外有多少个字符</span>
+<span class="k">var</span> <span class="nv">n</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">ch</span> <span class="k">in</span> <span class="n">message</span><span class="o">.</span><span class="n">characters</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">ch</span> <span class="o">==</span> <span class="s">"a"</span> <span class="o">||</span> <span class="n">ch</span> <span class="o">==</span> <span class="s">"e"</span> <span class="o">||</span> <span class="n">ch</span> <span class="o">==</span> <span class="s">"i"</span> <span class="o">||</span> <span class="n">ch</span> <span class="o">==</span> <span class="s">"o"</span> <span class="o">||</span> <span class="n">ch</span> <span class="o">==</span> <span class="s">"u"</span> <span class="p">{</span>
+        <span class="k">continue</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="k">var</span> <span class="nv">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">ch</span> <span class="k">in</span> <span class="n">message</span><span class="o">.</span><span class="n">characters</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="n">ch</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="s">"a"</span><span class="p">,</span> <span class="s">"e"</span><span class="p">,</span> <span class="s">"i"</span><span class="p">,</span> <span class="s">"o"</span><span class="p">,</span> <span class="s">"u"</span><span class="p">:</span>
+            <span class="k">continue</span>
+    <span class="k">default</span><span class="p">:</span>
+        <span class="n">count</span><span class="o">++</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>break终止循环可以用标记</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">for</span> <span class="k">var</span> <span class="nv">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="p">;</span> <span class="n">i</span><span class="o">++</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="k">var</span> <span class="nv">j</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="p">;</span> <span class="n">j</span><span class="o">++</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">3</span> <span class="p">{</span>
+            <span class="c1">//终止当前循环</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="mi">11</span>
+            <span class="k">break</span>
+        <span class="p">}</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">i</span><span class="se">)</span><span class="s"> </span><span class="se">\(</span><span class="n">j</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nv">outerloop</span><span class="p">:</span> <span class="k">for</span> <span class="k">var</span> <span class="nv">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="p">;</span> <span class="n">i</span><span class="o">++</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="k">var</span> <span class="nv">j</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="p">;</span> <span class="n">j</span><span class="o">++</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">3</span> <span class="p">{</span>
+            <span class="c1">//终止当前循环 break 后面可以跟标签</span>
+          <span class="k">break</span> <span class="n">outerloop</span>  
+        <span class="p">}</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">i</span><span class="se">)</span><span class="s"> </span><span class="se">\(</span><span class="n">j</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+
+  </div>
+
+</article>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+
+
+</footer>
+
+
+  </body>
+
+</html>
