@@ -12,7 +12,7 @@ layout: default
     <script type="text/javascript" src='//webapi.amap.com/maps?v=1.4.4&key=6f2ff94634344cea4a0177aaf35991e6'></script>
     <!-- UI组件库 1.0 -->
     <script src="//webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
-    <script src="{{ "/js/marker.js" | prepend: site.baseurl }}"></script>
+    <script src="{{ "/jss/marker.js" | prepend: site.baseurl }}"></script>
     <script type="text/javascript">
     //创建地图
         var map = new AMap.Map('container', {
@@ -21,7 +21,7 @@ layout: default
         center: [118.880099 , 28.979908]
         });
         var icon = new AMap.Icon({
-                        image: 'https://raw.githubusercontent.com/SkullFT/SkullFT.github.io/master/_site/images/one.jpeg',
+                        image: '{{ "/images/one.jpeg" | prepend: site.baseurl }}',
                         size: new AMap.Size(30, 30)
                     });
         var marker = new AMap.Marker({
@@ -47,7 +47,7 @@ layout: default
     			var marker;
     			if (provinces[i].type === 0) {
     				var icon = new AMap.Icon({
-    					image: '/images/one.jpeg',
+    					image: '{{ "/images/one.jpeg" | prepend: site.baseurl }}',
     					size: new AMap.Size(30, 30)
     				});
     				marker = new AMap.Marker({
