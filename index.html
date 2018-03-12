@@ -3,104 +3,97 @@ layout: default
 ---
 
 <div class="home">
+
+    <!-- UI组件库 1.0 
     <img src="https://github.com/SkullFT/SkullFT.github.io/blob/master/_site/images/one.jpeg?raw=true?raw=true" usemap="#map1520699543" border="0">
 <map id="map" name="map1520699543"><area shape="rect" coords="159.0000057220459,213.0000228881836,195,243" title="" href="https://skullft.github.io/think.html" style="outline: none;"></map>
+-->
 <div id="container"></div>
     <script type="text/javascript" src='//webapi.amap.com/maps?v=1.4.4&key=6f2ff94634344cea4a0177aaf35991e6'></script>
-    <!-- UI组件库 1.0 
+    <!-- UI组件库 1.0 -->
     <script src="//webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
-    <script src="https://webapi.amap.com/js/marker.js"></script>
+    <script src="/js/marker.js"></script>
     <script type="text/javascript">
     //创建地图
         var map = new AMap.Map('container', {
         resizeEnable: true,
         zoom: 9,
         center: [118.880099 , 28.979908]
-    });
-
-
-    AMapUI.loadUI(['overlay/SimpleInfoWindow'], function(SimpleInfoWindow) {
-
-        var marker = new AMap.Marker({
-            map: map,
-            zIndex: 888888,
-            position: [118.880099 , 28.879999]
-           
         });
-        
+        var icon = new AMap.Icon({
+                        image: 'https://raw.githubusercontent.com/SkullFT/SkullFT.github.io/master/_site/images/one.jpeg',
+                        size: new AMap.Size(30, 30)
+                    });
+        var marker = new AMap.Marker({
+            icon: icon,
+            offset: new AMap.Pixel(-12,-12),
+            title: '衢州市',
+            zIndex: 101,
+            position: [118.880099 , 28.879999],
+            map: map 
+        });
+        marker.on ('click',icoClick);
 
-        
+        function icoClick(e){
+        infoWindow.setContent("衢州市");
+        infoWindow.open(map, e.target.getPosition());
+    }
 
- var markers = []; //province见Demo引用的JS文件
- var infoWindows = [];
+
+        //添加全部省 marker
         for (var i = 0; i < provinces.length; i += 1) {
         	
-        
-        	var infoWindow = new SimpleInfoWindow({
-            //模板, underscore
-            infoTitle: '<strong><%- title %></strong>',
-            infoBody: '<p class="my-desc">' +
-                //<%= 原值插入 ..
-                '<%= img %>' +
-                //<%- html编码后插入
-                '<%- body %>' +
-                '</p>',
-            //模板数据
-            infoTplData: {
-                title: provinces[i].name,
-                img: '<img src="//vdata.amap.com/icons/b18/1/'+i+'.png" />',
-                body: i+'.png'
-            },
-
-            //基点指向marker的头部位置
-            offset: new AMap.Pixel(0, -31)
-        });
+    
     			var marker;
     			if (provinces[i].type === 0) {
     				var icon = new AMap.Icon({
-    					image: 'https://vdata.amap.com/icons/b18/1/2.png',
-    					size: new AMap.Size(24, 24)
+    					image: 'https://raw.githubusercontent.com/SkullFT/SkullFT.github.io/master/_site/images/one.jpeg',
+    					size: new AMap.Size(30, 30)
     				});
     				marker = new AMap.Marker({
     					icon: icon,
     					position: provinces[i].center.split(','),
-    					offset: new AMap.Pixel(-12,-12),
+    					offset: new AMap.Pixel(-15,-30),
     					zIndex: 101,
     					title: provinces[i].name,
-    					map: map
+    					map: map,
+                        title: "test"
     				});
     			} else {
     				marker = new AMap.Marker({
     					position: provinces[i].center.split(','),
     					title: provinces[i].name,
+                        animation: 'AMAP_ANIMATION_DROP',
     					map: map
     				});
             if (provinces[i].type === 2) {
-      				var content= "<div class = 'taiwan'>宝岛台湾</div>";
       				baodao = new AMap.Marker({
-      					content: content,
       					position: provinces[i].center.split(','),
       					title: provinces[i].name,
       					offset: new AMap.Pixel(0,0),
       					map: map
       				});
             }
-    			}
-    			markers.push(marker);
-    			infoWindows.push(infoWindow);
-    			//marker 点击时打开
-        	AMap.event.addListener(marker, 'click', function(e) {
-            openInfoWin();
-        });
-    		}
-    		function openInfoWin() {
-            infoWindow.open(map, marker.getPosition());
-        }
-			  map.setFitView();
-			  openInfoWin();
-			  
+    	}
+        marker.content= i;
+         marker.on('click',markerClick);    
 
+    } //循环结束
+    
+    var infoWindow = new AMap.InfoWindow({
+        offset: new AMap.Pixel(0,-31)
     });
+
+
+
+    function markerClick(e){
+        var content = provinces[e.target.content];
+        infoWindow.setContent(content.name);
+        infoWindow.open(map, e.target.getPosition());
+        window.location.href="/"+provinces[e.target.content].http;
+    }
+    map.setFitView();
+
     </script>
-    -->
+    
 </div>
